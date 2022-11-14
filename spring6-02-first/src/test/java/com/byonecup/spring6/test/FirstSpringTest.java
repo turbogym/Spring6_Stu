@@ -3,6 +3,8 @@ package com.byonecup.spring6.test;
 import com.byonecup.spring6.bean.User;
 import com.byonecup.spring6.dao.UserDaoImplForMySQL;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -22,6 +24,14 @@ public class FirstSpringTest {
     public void testBeginInitBean() {
         // 注意：不是在调用getBean()方法的时候创建对象，执行以下代码的时候就会创建对象。
         new ClassPathXmlApplicationContext("spring.xml");
+        // 自己使用log4j2记录日志信息
+        // 第一步：创建日志记录器对象
+        // 获取FirstSpringTest类的日志记录器对象，也就是说只要是FirstSpringTest类中的代码执行记录日志的话，就输出相关的日志信息。
+        Logger logger = LoggerFactory.getLogger(FirstSpringTest.class);
+        // 第二步：记录日志，根据不同的级别来输出日志
+        logger.info("我是一条日志消息");
+        logger.debug("我是一条调试信息");
+        logger.error("我是一条错误信息");
     }
 
     @Test
