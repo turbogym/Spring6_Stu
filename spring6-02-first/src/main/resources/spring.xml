@@ -18,4 +18,6 @@
     <bean id="userBean" class="com.byonecup.spring6.bean.User" />
     <!--配置其它的bean-->
     <bean id="userDaoBean" class="com.byonecup.spring6.dao.UserDaoImplForMySQL" />
+    <!--配置java.util.Date Bean-->
+    <bean id="nowTime" class="java.util.Date" />
 </beans>
