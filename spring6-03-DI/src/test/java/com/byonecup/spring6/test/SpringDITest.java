@@ -1,5 +1,6 @@
 package com.byonecup.spring6.test;
 
+import com.byonecup.spring6.bean.User;
 import com.byonecup.spring6.dao.UserDao;
 import com.byonecup.spring6.service.CustomerService;
 import com.byonecup.spring6.service.OrderService;
@@ -44,5 +45,12 @@ public class SpringDITest {
         ApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("setDI.xml");
         OrderService orderServiceBean2 = applicationContext1.getBean("orderServiceBean2", OrderService.class);
         orderServiceBean2.generate();
+    }
+
+    @Test
+    public void testSimpleTypeSet() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("setDI.xml");
+        User userBean = applicationContext.getBean("userBean", User.class);
+        System.out.println(userBean);
     }
 }
