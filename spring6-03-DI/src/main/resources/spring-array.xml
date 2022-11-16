@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="d1" class="com.byonecup.spring6.bean.Digitals">
+        <property name="name" value="Apple"/>
+    </bean>
+
+    <bean id="d2" class="com.byonecup.spring6.bean.Digitals">
+        <property name="name" value="Samsung"/>
+    </bean>
+
+    <bean id="d3" class="com.byonecup.spring6.bean.Digitals">
+        <property name="name" value="Huawei"/>
+    </bean>
+
+    <bean id="turbo" class="com.byonecup.spring6.bean.Turbo">
+
+        <!--这个数组属性当中的元素类型是String简单类型-->
+        <property name="aiHaos">
+            <array>
+                <value>吃饭</value>
+                <value>睡觉</value>
+                <value>打豆豆</value>
+            </array>
+        </property>
+
+        <!--这个数组当中的类型就不是简单类型了-->
+        <property name="digitals">
+            <array>
+                <ref bean="d1"/>
+                <ref bean="d2"/>
+                <ref bean="d3"/>
+            </array>
+        </property>
+    </bean>
+</beans>
