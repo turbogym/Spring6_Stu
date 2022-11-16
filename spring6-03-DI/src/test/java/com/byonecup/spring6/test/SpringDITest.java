@@ -2,6 +2,7 @@ package com.byonecup.spring6.test;
 
 import com.byonecup.spring6.dao.UserDao;
 import com.byonecup.spring6.service.CustomerService;
+import com.byonecup.spring6.service.OrderService;
 import com.byonecup.spring6.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -32,5 +33,16 @@ public class SpringDITest {
 
         CustomerService csService2 = applicationContext.getBean("csService2", CustomerService.class);
         csService2.save();
+    }
+
+    @Test
+    public void testSetDI2() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("setDI.xml");
+        OrderService orderServiceBean = applicationContext.getBean("orderServiceBean", OrderService.class);
+        orderServiceBean.generate();
+
+        ApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("setDI.xml");
+        OrderService orderServiceBean2 = applicationContext1.getBean("orderServiceBean2", OrderService.class);
+        orderServiceBean2.generate();
     }
 }

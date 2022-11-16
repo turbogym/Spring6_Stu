@@ -25,6 +25,8 @@
     </bean>
 
     <bean id="csService2" class="com.byonecup.spring6.service.CustomerService">
+        <!--不指定下标，也不指定参数名，让Spring自己做类型匹配。-->
+        <!--这种方式实际上是根据类型进行注入的。Spring会自动根据类型来判断把ref注入给哪个参数。-->
         <constructor-arg ref="userDaoBean"/>
         <constructor-arg ref="vipDaoBean"/>
     </bean>
