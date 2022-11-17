@@ -23,6 +23,18 @@
             ● websocket：一个websocket生命周期对应一个Bean。仅限于在WEB应用中使用。
             ● 自定义scope：很少使用。
     -->
-    <bean id="sb" class="com.byonecup.spring6.bean.SpringBean" scope="prototype"></bean>
+    <bean id="sb" class="com.byonecup.spring6.bean.SpringBean" scope="threadScope"></bean>
+
+    <!--配置自定义的作用域-->
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+        <property name="scopes">
+            <map>
+                <entry key="threadScope">
+                    <!--这个Scope接口的实现类使用的是Spring框架内置的。也可以自定义。-->
+                    <bean class="org.springframework.context.support.SimpleThreadScope"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
 
 </beans>
