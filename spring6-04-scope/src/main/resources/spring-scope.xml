@@ -7,6 +7,21 @@
         目前来说：scope属性有两个值
             第一个值：singleton 单例（默认情况下就是单例的）
             第二个值：prototype 原型/多例
+        其实scope属性有多个值：
+            例如：request session
+            但是request session要求项目必须是一个web应用。当引入springmvc框架的时候，这两个值就可以使用了。
+            request：一次请求当中一个Bean
+            session：一次会话中只有一个Bean
+
+        scope属性的值不止两个，它一共包括8个选项：
+            ● singleton：默认的，单例。
+            ● prototype：原型。每调用一次getBean()方法则获取一个新的Bean对象。或每次注入的时候都是新对象。
+            ● request：一个请求对应一个Bean。仅限于在WEB应用中使用。
+            ● session：一个会话对应一个Bean。仅限于在WEB应用中使用。
+            ● global session：portlet应用中专用的。如果在Servlet的WEB应用中使用global session的话，和session一个效果。（portlet和servlet都是规范。servlet运行在servlet容器中，例如Tomcat。portlet运行在portlet容器中。）
+            ● application：一个应用对应一个Bean。仅限于在WEB应用中使用。
+            ● websocket：一个websocket生命周期对应一个Bean。仅限于在WEB应用中使用。
+            ● 自定义scope：很少使用。
     -->
     <bean id="sb" class="com.byonecup.spring6.bean.SpringBean" scope="prototype"></bean>
 
