@@ -4,6 +4,8 @@ import com.byonecup.spring6.bean.*;
 import com.byonecup.spring6.dao.UserDao;
 import com.byonecup.spring6.dao.VIPDao;
 import com.byonecup.spring6.jdbc.MyDataSource;
+import com.byonecup.spring6.jdbc.MyDataSource1;
+import com.byonecup.spring6.jdbc.MyDataSource2;
 import com.byonecup.spring6.service.CustomerService;
 import com.byonecup.spring6.service.OrderService;
 import com.byonecup.spring6.service.UserService;
@@ -118,5 +120,21 @@ public class SpringDITest {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-p.xml");
         Dog dogBean = applicationContext.getBean("dogBean", Dog.class);
         System.out.println(dogBean);
+    }
+
+    @Test
+    public void testC() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-c.xml");
+        People peopelBean = applicationContext.getBean("peopleBean", People.class);
+        System.out.println(peopelBean);
+    }
+
+    @Test
+    public void testUtil() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-util.xml");
+        MyDataSource1 ds1 = applicationContext.getBean("ds1", MyDataSource1.class);
+        System.out.println(ds1);
+        MyDataSource2 ds2 = applicationContext.getBean("ds2", MyDataSource2.class);
+        System.out.println(ds2);
     }
 }
