@@ -7,6 +7,35 @@
     <groupId>com.byonecup</groupId>
     <artifactId>spring6-04-scope</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!--配置仓库-->
+    <repositories>
+        <repository>
+            <id>repository.spring.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
+
+    <!--依赖-->
+    <dependencies>
+        <!--如果第一次加载报错，试着把maven配置文件中的阿里云镜像地址先注释，下载完再弄回去-->
+        <!--当引入Spring Context依赖之后，表示将Spring的基础依赖引入了-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.0.0-M2</version>
+        </dependency>
+
+        <!--引入junit依赖-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
