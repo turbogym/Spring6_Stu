@@ -13,8 +13,19 @@ public class CustomerService {
     private UserDao userDao;
     private VIPDao vipDao;
 
+    public CustomerService() {
+    }
+
     public CustomerService(UserDao userDao, VIPDao vipDao) {
         this.userDao = userDao;
+        this.vipDao = vipDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public void setVipDao(VIPDao vipDao) {
         this.vipDao = vipDao;
     }
 

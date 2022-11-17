@@ -137,4 +137,14 @@ public class SpringDITest {
         MyDataSource2 ds2 = applicationContext.getBean("ds2", MyDataSource2.class);
         System.out.println(ds2);
     }
+
+    @Test
+    public void testAutowire() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-autowire.xml");
+//        OrderService orderServiceBean = applicationContext.getBean("orderServiceBean", OrderService.class);
+//        orderServiceBean.generate();
+
+        CustomerService cs = applicationContext.getBean("cs", CustomerService.class);
+        cs.save();
+    }
 }
