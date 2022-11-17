@@ -112,4 +112,11 @@ public class SpringDITest {
         MathBean mathBean = applicationContext.getBean("mathBean", MathBean.class);
         System.out.println(mathBean);
     }
+
+    @Test
+    public void testP() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-p.xml");
+        Dog dogBean = applicationContext.getBean("dogBean", Dog.class);
+        System.out.println(dogBean);
+    }
 }
