@@ -147,4 +147,11 @@ public class SpringDITest {
         CustomerService cs = applicationContext.getBean("cs", CustomerService.class);
         cs.save();
     }
+
+    @Test
+    public void testProperties() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-properties.xml");
+        MyDataSource ds = applicationContext.getBean("ds", MyDataSource.class);
+        System.out.println(ds);
+    }
 }
