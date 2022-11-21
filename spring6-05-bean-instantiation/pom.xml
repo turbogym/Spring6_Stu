@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.byonecup</groupId>
-    <artifactId>spring6-05-bean-instantion</artifactId>
+    <artifactId>spring6-05-bean-instantiation</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
