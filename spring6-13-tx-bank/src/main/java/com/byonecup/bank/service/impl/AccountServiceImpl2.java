@@ -27,7 +27,7 @@ public class AccountServiceImpl2 implements AccountService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void save(Account act) {
         accountDao.insert(act);
         // 模拟异常
