@@ -1,9 +1,8 @@
-package com.byonecuo.proxy.client;
+package com.byonecup.proxy.client;
 
-import com.byonecuo.proxy.service.OrderService;
-import com.byonecuo.proxy.service.OrderServiceImpl;
-import com.byonecuo.proxy.service.OrderServiceImplSub;
-import com.byonecuo.proxy.service.OrderServiceProxy;
+import com.byonecup.proxy.service.OrderService;
+import com.byonecup.proxy.service.OrderServiceImpl;
+import com.byonecup.proxy.service.OrderServiceProxy;
 
 /**
  * @Title Spring6_Stu Test

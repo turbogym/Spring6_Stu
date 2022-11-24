@@ -1,4 +1,4 @@
-package com.byonecuo.proxy.service;
+package com.byonecup.proxy.service;
 
 /**
  * @Title Spring6_Stu OrderService
