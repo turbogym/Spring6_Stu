@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
  * @Version 1.0
  */
 @Service("accountService")
-//@Transactional
 public class AccountServiceImpl implements AccountService {
 
     @Resource(name = "accountDao")
@@ -25,7 +24,6 @@ public class AccountServiceImpl implements AccountService {
 
     // 控制事务，因为在这个方法中要完成所有的转账业务。
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
     public void transfer(String fromActno, String toActno, double money) {
 
         // 第一步：开启事务
@@ -48,8 +46,8 @@ public class AccountServiceImpl implements AccountService {
         int count = accountDao.update(fromAct);
 
         // 模拟异常
-        String s = null;
-        s.toString();
+//        String s = null;
+//        s.toString();
 
         count += accountDao.update(toAct);
         if (count != 2) {
@@ -60,31 +58,10 @@ public class AccountServiceImpl implements AccountService {
 
         // 第四步：如果执行业务流程过程中，有异常，回滚事务
 
-
-//        withdraw();
     }
 
 
-    @Resource(name = "accountService2")
+    @Resource(name = "accountService")
     private AccountService accountService;
 
-    @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void save(Account act) {
-        // 这里调用dao的insert方法。
-        accountDao.insert(act);
-
-        // 创建账户对象
-        Account act2 = new Account("act-004", 1000.0);
-
-        try {
-            accountService.save(act2);
-        } catch (Exception e) {
-
-        }
-
-    }
-
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void withdraw() {}
 }
