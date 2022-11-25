@@ -12,10 +12,10 @@
     <update id="update">
         update t_act set balance = #{balance} where actno = #{actno}
     </update>
-    <select id="selectByActno" resultType="com.byonecup.bank.pojo.Account">
+    <select id="selectByActno" resultType="Account">
         select * from t_act where actno = #{actno}
     </select>
-    <select id="selectAll" resultType="com.byonecup.bank.pojo.Account">
+    <select id="selectAll" resultType="Account">
         select * from t_act
     </select>
 </mapper>
